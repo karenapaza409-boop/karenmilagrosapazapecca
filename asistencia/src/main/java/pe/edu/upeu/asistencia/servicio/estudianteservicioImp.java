@@ -1,38 +1,42 @@
 package pe.edu.upeu.asistencia.servicio;
 
 import org.springframework.stereotype.Service;
-import pe.edu.upeu.asistencia.modelo.estudiante;
-import pe.edu.upeu.asistencia.repositorio.estudianterepositorio;
+import pe.edu.upeu.asistencia.modelo.participante;
+import pe.edu.upeu.asistencia.repositorio.participanterepositorio;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class estudianteservicioImp extends estudianterepositorio implements estudianteservioI {
+public class estudianteservicioImp extends participanterepositorio implements participanteservicioI {
 
+
+    private String listaparticipante;
 
     @Override
-    public void saveentidad(estudiante estudiante) {
-        listaestudiantes.add(estudiante);
+    public void save(participante participante) {
+        listaestudiantes.add(participante);
     }
 
     @Override
-    public List<estudiante> deleteentidad(int index) {
+    public List<participante> delete(int index) {
      return listaestudiantes;
     }
 
     @Override
-    public void updateentidad(estudiante estudiante, int index) {
-        listaestudiantes.set(index,estudiante);
+    public void update(participante participante, int index) {
+        listaestudiantes.set(index, participante);
     }
 
     @Override
-    public estudiante finentidad(int index) {
-        return listaestudiantes.remove(index);
-    }
-
-    @Override
-    public List<estudiante> findallentidades() {
+    public List<participante> findAll() {
+        if(listaparticipante.isEmpty()){
+            return super.findAll();
+        }
         return listaestudiantes;
+    }
+
+    @Override
+    public participante findById(int index) {
+        return listaestudiantes.get(index);
     }
 }

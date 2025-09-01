@@ -8,15 +8,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import pe.edu.upeu.asistencia.modelo.estudiante;
-import pe.edu.upeu.asistencia.servicio.estudianteservioI;
+import pe.edu.upeu.asistencia.modelo.participante;
+import pe.edu.upeu.asistencia.servicio.participanteservicioI;
 
 
 @Controller
 public class asistenciacontrol {
 
     @Autowired
-    estudianteservioI esi;
+    participanteservicioI esi;
 
     @FXML
     private Label idMsg;
@@ -33,18 +33,18 @@ public class asistenciacontrol {
 
     @FXML
     public void regestudiante(){
-        estudiante e = new estudiante();
+        participante e = new participante();
         e.setNombre(new SimpleStringProperty(txtDato.getText()));
         e.setEstado(new SimpleBooleanProperty(true));
 
-        esi.saveentidad(new estudiante());
+        esi.save(new participante());
 
         listaestudiantes();
 
     }
 
     void listaestudiantes(){
-        for(estudiante e: esi.findallentidades()){
+        for(participante e: esi.findAll()){
             System.out.println(e.getNombre());
         }
     }
