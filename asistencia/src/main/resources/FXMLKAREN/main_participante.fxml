@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.asistencia.control.participantecontroller">
+   <children>
+      <VBox layoutX="14.0" layoutY="23.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <AnchorPane>
+               <children>
+                  <Label layoutX="75.0" layoutY="20.0" prefHeight="50.0" prefWidth="123.0" text="getionar participantes" />
+                  <Label layoutX="267.0" layoutY="35.0" prefHeight="35.0" prefWidth="152.0" text="buscar participante" />
+                  <TextField layoutX="256.0" layoutY="70.0" />
+               </children></AnchorPane>
+            <AnchorPane>
+               <children>
+                  <HBox layoutY="20.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <children>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="27.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="formulario" GridPane.columnSpan="2147483647" />
+                              <Label prefHeight="17.0" prefWidth="41.0" text="dni:" GridPane.rowIndex="1" />
+                              <Label text="nombres" GridPane.rowIndex="2" />
+                              <Label text="apellidos" GridPane.rowIndex="3" />
+                              <Label text="carreras" GridPane.rowIndex="4" />
+                              <Label text="tipo participante" GridPane.rowIndex="5" />
+                              <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                              <TextField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                              <TextField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" text="buscar" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <ComboBox maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                              <ComboBox maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                              <Button mnemonicParsing="false" text="guardar" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" text="cancelar" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                        <AnchorPane prefHeight="190.0" prefWidth="189.0">
+                           <children>
+                              <TableView layoutX="14.0" layoutY="42.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="C1" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                </columns>
+                              </TableView>
+                           </children></AnchorPane>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

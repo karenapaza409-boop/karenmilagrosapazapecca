@@ -1,10 +1,18 @@
 package pe.edu.upeu.asistencia.control;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.TabPane;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
+
+import java.util.Map;
 
 @Controller
 public class mainguicontroller {
@@ -14,6 +22,83 @@ public class mainguicontroller {
     MenuBar menuBar;
     @FXML
     TabPane tabPane;
+    @FXML
+    MenuItem menuItem1,menuItemC;
+
+    @Autowired
+    ApplicationContext Context;
 
 
+   @FXML
+    public void initialize(){
+       menuItemlistener mIL=new menuItemlistener();
+       menuItem1.setOnAction (mIL::handle);
+       menuItemC.setOnAction (mIL::handle);
+
+
+
+   }
+
+   class menuItemlistener{
+       Map<String, String[]>menuConfig= Map.of(
+               "menuItem1",new String[]{"/FXMLKAREN/main_participante.fmxl","Reg.Participante","T"},
+               "menuItemC",new String[]{"/FXMLKAREN/login.fxml","salir","C"}
+
+
+       );
+
+
+       public void handle(ActionEvent e){
+           String id=((MenuItem)e.getSource()).getId();
+           if(menuConfig.containsKey(id)){
+               String[] items=menuConfig.get(id);
+               if(items[2].equals("C")){
+                   Platform.exit();
+                   System.exit(0);
+               }else {
+                   abrirtabPaneFXML(items[0], items[1]);
+
+               }
+
+           }
+
+
+       }
+
+       private void abrirtabPaneFXML(String fxmlPath, String tittle){
+           try {
+               FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
+               fxmlLoader.setControllerFactory(Context::getBean);
+               Parent root = fxmlLoader.load();
+               ScrollPane scrollPane = (ScrollPane) root;
+               scrollPane.setFitToWidth(true);
+               scrollPane.setFitToWidth(true);
+
+               Tab newTab = new Tab(tittle, scrollPane);
+               tabPane.getTabs().clear();
+
+
+
+
+               tabPane.getTabs().add(newTab);
+
+
+
+           }catch (Exception ex){
+
+               throw new RuntimeException(ex);
+
+           }
+       }
+
+
+
+
+   }
+    class menulistener{
+       public void handle(Event e){
+
+       }
+
+    }
 }
