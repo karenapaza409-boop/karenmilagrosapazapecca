@@ -41,7 +41,7 @@ public class mainguicontroller {
 
    class menuItemlistener{
        Map<String, String[]>menuConfig= Map.of(
-               "menuItem1",new String[]{"/FXMLKAREN/main_participante.fmxl","Reg.Participante","T"},
+               "menuItem1",new String[]{"/FXMLKAREN/main_participante.fxml","Reg.Participante","T"},
                "menuItemC",new String[]{"/FXMLKAREN/login.fxml","salir","C"}
 
 
@@ -70,7 +70,8 @@ public class mainguicontroller {
                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
                fxmlLoader.setControllerFactory(Context::getBean);
                Parent root = fxmlLoader.load();
-               ScrollPane scrollPane = (ScrollPane) root;
+
+               ScrollPane scrollPane = new  ScrollPane(root);
                scrollPane.setFitToWidth(true);
                scrollPane.setFitToWidth(true);
 

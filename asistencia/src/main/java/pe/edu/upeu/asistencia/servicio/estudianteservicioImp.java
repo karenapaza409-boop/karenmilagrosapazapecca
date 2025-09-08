@@ -10,7 +10,7 @@ import java.util.List;
 public class estudianteservicioImp extends participanterepositorio implements participanteservicioI {
 
 
-    private String listaparticipante;
+
 
     @Override
     public void save(participante participante) {
@@ -29,7 +29,7 @@ public class estudianteservicioImp extends participanterepositorio implements pa
 
     @Override
     public List<participante> findAll() {
-        if(listaparticipante.isEmpty()){
+        if(listaestudiantes.isEmpty()){
             return super.findAll();
         }
         return listaestudiantes;
