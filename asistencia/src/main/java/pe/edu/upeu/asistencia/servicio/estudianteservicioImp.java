@@ -18,8 +18,8 @@ public class estudianteservicioImp extends participanterepositorio implements pa
     }
 
     @Override
-    public List<participante> delete(int index) {
-     return listaestudiantes;
+   public void delete(int index) {
+      listaestudiantes.remove(index);
     }
 
     @Override

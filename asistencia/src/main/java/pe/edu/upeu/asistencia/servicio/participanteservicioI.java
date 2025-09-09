@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface participanteservicioI {
     void save(participante participante);
-    List<participante> delete(int index);
+    void delete(int index);
     void update(participante participante, int index);
 
      List<participante> findAll();
