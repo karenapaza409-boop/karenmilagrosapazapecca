@@ -1,5 +1,6 @@
 package pe.edu.upeu.asistencia.control;
 
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -56,10 +57,11 @@ public class participantecontroller {
         p.setApellido(new SimpleStringProperty(txtapellidos.getText()));
         p.setCarrera(cbxCarreras.getSelectionModel().getSelectedItem());
         p.setTipoparticipante(cbxTipoParticipante.getSelectionModel().getSelectedItem());
+        p.setEstado(new SimpleBooleanProperty(true));
         if(indexE==-1){
             ps.save(p);
         }else {
-            ps.update(p, indexE);
+            ps.update(p);
         }
         listarparticipante();
 

@@ -14,7 +14,7 @@ public class estudianteservicioImp extends participanterepositorio implements pa
 
     @Override
     public void save(participante participante) {
-        listaestudiantes.add(participante);
+        super.save(participante);
     }
 
     @Override
@@ -23,16 +23,15 @@ public class estudianteservicioImp extends participanterepositorio implements pa
     }
 
     @Override
-    public void update(participante participante, int index) {
-        listaestudiantes.set(index, participante);
+    public  participante update(participante participante) {
+
+      return super.update(participante);
     }
 
     @Override
     public List<participante> findAll() {
-        if(listaestudiantes.isEmpty()){
-            return super.findAll();
-        }
-        return listaestudiantes;
+
+        return super.findAll();
     }
 
     @Override

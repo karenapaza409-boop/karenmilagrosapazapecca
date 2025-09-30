@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 public enum Carrera {
 
 
-    Sistemas(Facultad.FIA,"sistemas"),
+    SISTEMAS(Facultad.FIA,"sistemas"),
     civil(Facultad.FIA,"civil"),
     general(Facultad.GENERAL,"general"),;
 
