@@ -93,8 +93,9 @@ public class participantecontroller {
                   editardatos(p,getIndex());
                 });
                 eliminarBtn.setOnAction(event -> {
+                    participante p = getTableView().getItems().get(getIndex());
                     System.out.println("eliminando participante"+getIndex());
-                   eliminarParticipante(getIndex());
+                   eliminarParticipante(p.getDni().getValue());
                 });
 
             }
@@ -129,8 +130,8 @@ public class participantecontroller {
 
     }
 
-    public void eliminarParticipante(int index){
-        ps.delete(index);
+    public void eliminarParticipante(String dni){
+        ps.delete(dni);
         listarparticipante();
     }
     public void editardatos(participante p, int index){
